@@ -1,0 +1,68 @@
+﻿
+
+@{
+    UserStore user = ViewData["user"] as UserStore;
+    ViewData["Title"] = "Register Page";
+}
+
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger alert-dismissible">
+        <strong>@ViewBag.ErrorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+}
+<div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="text-center">Register</h4>
+                </div>
+                <div class="card-body">
+                    <form id="registerForm" action="/Register/RegisterUser" method="post" class="register">
+                        <div class="form-group">
+                            <label for="username">Name</label>
+                            <input type="text" class="form-control" id="username" value="@user.Name" name="name" placeholder="Enter Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone(VN - +84)</label>
+                            <input type="number" class="form-control" id="phone" value="@user.Phone" name="phone" placeholder="Enter Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" value="@user.Email" name="email" placeholder="Enter Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password least 8 characters" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">
+                                Confirm password
+                            </label>
+                            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required>
+                            <span id="passwordMatch"></span>
+                        </div>
+                        <script>
+                            document.getElementById("registerForm").addEventListener("submit", function (event) {
+                                var password = document.getElementById("password").value;
+                                var confirmPassword = document.getElementById("confirmPassword").value;
+                                var passwordMatchSpan = document.getElementById("passwordMatch");
+
+                                if (password !== confirmPassword) {
+                                    passwordMatchSpan.innerText = "Passwords do not match!";
+                                    event.preventDefault(); // Ngăn form được gửi đi nếu mật khẩu không trùng khớp
+                                } else {
+                                    passwordMatchSpan.innerText = ""; // Xóa thông báo lỗi nếu mật khẩu trùng khớp
+                                }
+                            });
+                        </script>
+                        <button type="submit" class="btn btn-primary btn-block">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

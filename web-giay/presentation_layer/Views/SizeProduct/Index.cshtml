@@ -1,0 +1,136 @@
+﻿@model List<SizeProduct>;
+
+@{
+    ViewData["Title"] = "SizeProduct Page";
+    Layout = "~/presentation_layer/Views/Shared/_LayoutAdmin.cshtml";
+    List<SizeProduct> sizeProducts = Model;
+    List<Size> sizes = ViewData["Size"] as List<Size>;
+    List<Product> products = ViewData["Product"] as List<Product>;
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+
+            <!-- Form nhập thông tin -->
+            <form class="mb-2" id="addSizeProductForm" asp-controller="ManageSizeProduct" asp-action="AddSizeProduct" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="col-md-4 ">
+                        <select class="form-control" id="inputProductName" name="ProductId">
+                            <option value="" disabled selected style="display:none;">Select Product</option>
+                            @foreach (Product p in products)
+                            {
+                                <option value="@p.ProductId">@p.ProductName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 ">
+                        <select class="form-control" id="inputSizeName" name="SizeId">
+                            <option value="" disabled selected style="display:none;">Select Size</option>
+                            @foreach (Size s in sizes)
+                            {
+                                <option value="@s.SizeId">@s.SizeName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control" id="inputQuantity" name="Quantity" placeholder="Quantity" required>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-success" type="submit">Add</button>
+                    </div>
+                </div>
+            </form>
+
+            <form id="updateSizeProductForm" asp-controller="ManageSizeProduct" asp-action="UpdateSizeProduct" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <input type="hidden" id="SizeProductIdUpdate" name="SizeProductIdUpdate" value="">
+                    <div class="col-md-4 ">
+                        <select class="form-control" id="ProductNameUpdate" name="ProductIdUpdate">
+                            <option value="" disabled selected style="display:none;">Select Product</option>
+                            @foreach (Product p in products)
+                            {
+                                <option value="@p.ProductId">@p.ProductName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 ">
+                        <select class="form-control" id="SizeNameUpdate" name="SizeIdUpdate">
+                            <option value="" disabled selected style="display:none;">Select Size</option>
+                            @foreach (Size s in sizes)
+                            {
+                                <option value="@s.SizeId">@s.SizeName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="number" class="form-control" id="QuantityUpdate" name="QuantityUpdate" placeholder="Quantity" required>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-info" type="submit">Update</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Danh sách thông tin -->
+        </div>
+        <div class="mt-4">
+            @foreach (SizeProduct sizeProduct in sizeProducts)
+            {
+                <div class="row mb-3 align-items-center item-sizeProduct" style="height: 100px;margin-bottom :10px; border: 1px solid black" data-key="@sizeProduct.SizeProductId">
+                    <div class="col-sm-6">ProductName: @foreach(Product p in products)
+                        {
+                            if(sizeProduct.ProductId == p.ProductId) {<text>@p.ProductName</text>}
+                        }
+                    </div>
+                    <div class="col-sm-2">Size: @foreach(Size s in sizes)
+                        {
+                            if(sizeProduct.SizeId == s.SizeId) {<text>@s.SizeName</text>}
+                        }
+                    </div>
+                    <div class="col-sm-3">Quantity: @sizeProduct.Quantity</div>
+                    <div class="col-sm-1">
+                        <a class="btn btn-danger" asp-area="" asp-controller="ManageSizeProduct"
+                           asp-action="DeleteSizeProduct" asp-route-sizeProductId="@sizeProduct.SizeProductId">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const updateSizeProductForm = document.getElementById('updateSizeProductForm');
+        const sizeProductItems = document.querySelectorAll('.item-sizeProduct');
+
+        sizeProductItems.forEach(function (sizeProductItem) {
+            sizeProductItem.addEventListener('click', function () {
+                const sizeProductId = this.getAttribute('data-key');
+                const productName = this.querySelector('.col-sm-6').innerText.split(': ')[1];
+                const sizeName = this.querySelector('.col-sm-2').innerText.split(': ')[1];
+                const quantity = this.querySelector('.col-sm-3').innerText.split(': ')[1];
+
+                var productDropdown = document.getElementById('ProductNameUpdate');
+                for (var i = 0; i < productDropdown.options.length; i++) {
+                    if (productDropdown.options[i].text === productName) {
+                        productDropdown.selectedIndex = i;
+                        break;
+                    }
+                }
+
+                var sizeDropdown = document.getElementById('SizeNameUpdate');
+                for (var j = 0; j < sizeDropdown.options.length; j++) {
+                    if (sizeDropdown.options[j].text === sizeName) {
+                        sizeDropdown.selectedIndex = j;
+                        break;
+                    }
+                }
+
+                document.getElementById('SizeProductIdUpdate').value = sizeProductId;
+                document.getElementById('QuantityUpdate').value = quantity;
+
+                updateSizeProductForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    });
+</script>

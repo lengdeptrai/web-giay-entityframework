@@ -1,0 +1,197 @@
+﻿body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+header{
+    top: 0;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 3;
+}
+
+nav {
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 100px;
+    z-index: 3;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+
+main{
+    position: relative;
+    width: 90%;
+    margin: 200px auto 3px auto;
+
+    
+}
+
+footer{
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    bottom: 0;
+    background-color: white;
+    z-index: 999;
+
+}
+.container{
+    margin: 0 15px;
+    width: 100%;
+    height: 100%;
+    display : flex;
+    justify-content: space-between;
+    padding: 0;
+}
+.nav{
+    align-items: center;
+}
+.nav-item{
+    display: flex;
+    margin: 0 15px;
+}
+
+.nav-item .usershop{
+    display: none;
+}
+
+.nav-item .usershop.login{
+    display: block;
+}
+
+.nav-item .usershop.login ~ .register-btn,
+.nav-item .usershop.login ~ .login-btn{
+    display: none;
+}
+
+.nav-item .user a{
+    width: 100%;
+    height: 100%;
+}
+
+.nav-item .register-btn,
+.nav-item .login-btn{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+    margin: 0 5px;
+    overflow: hidden;
+}
+
+.nav-item .register-btn a,
+.nav-item .login-btn a{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart{
+    width: 60px;
+    height: 100%;
+    font-size : 24px;
+}
+
+.cart a {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.cart a span{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: orangered;
+    color: white;
+    font-size: 14px;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+}
+
+
+
+.bars:hover .navbar{
+    display: block;
+}
+
+
+.bars{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+.bars .navbars::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 10px;
+    bottom: -10px;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.bars .navbar {
+    position: absolute;
+    width: 170px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    z-index: 1;
+    top: 115%;
+    left: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.navbar-item{
+    cursor: pointer;
+}
+.navbar-item:hover {
+    background-color: #d8d8d8;
+}
+
+.search{
+    width: 400px;
+    height: 100%;
+    display: flex;
+    align-items : center;
+}
+.search input{
+    outline: none;
+    flex: 1;
+    height: 40px;
+}
+
+.search button{
+    width: 70px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 4px;
+}
+
+div.alert.alert-success.alert-dismissible {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    z-index: 4;
+}

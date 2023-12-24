@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+    Layout = "~/presentation_layer/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="tile">
+            <h3 class="tile-title">Biểu đồ doanh số bán hàng</h3>
+            <canvas id="salesChart" width="100%" height="300"></canvas>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="tile">
+            <h3 class="tile-title">Bảng Báo cáo</h3>
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Tháng</th>
+                        <th>Doanh số</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tháng 1</td>
+                        <td>1000</td>
+                    </tr>
+                    <tr>
+                        <td>Tháng 2</td>
+                        <td>1500</td>
+                    </tr>
+                    <!-- Các dòng dữ liệu khác -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

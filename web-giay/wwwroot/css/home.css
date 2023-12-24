@@ -1,0 +1,78 @@
+﻿.home{
+    width: 95%;
+}
+
+
+element.style {
+}
+
+.product-item .product-card {
+    width: 200px;
+    height: 280px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    margin-bottom: 10px;
+    border: 1px solid transparent;
+    transition: 0.5s;
+    position: relative;
+}
+
+.product-card:hover .add-cart{
+    display: block;
+}
+.add-cart {
+    transition: 0.5s;
+    background-color: orangered;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 3px;
+    display: none;
+    cursor: pointer;
+}
+
+.product-card:hover{
+    border-color: black;
+}
+
+.product-card a {
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.product-card a .cover-img{
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.product-card a h6{
+    width: 95%;
+    padding-left: 5px;
+    overflow: hidden;
+      white-space: nowrap; /* Ngăn chặn việc xuống dòng */
+  overflow: hidden; /* Ẩn nội dung vượt quá kích thước */
+  text-overflow: ellipsis;
+}
+
+.product-card a p{
+    padding-left: 5px;
+    color: red;
+}
+
+.cover-img img{
+    width: 95%;
+    height: 95%;
+}
+
+div.product-item{
+    padding: 0;
+}

@@ -1,0 +1,91 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = web_giay
+build_property.RootNamespace = web_giay
+build_property.ProjectDir = D:\MyWork\web-giay\web-giay\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = D:\MyWork\web-giay\web-giay
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXENhcnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXEhvbWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXEhvbWVcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXExvZ2luXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/ManageAccount/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXE1hbmFnZUFjY291bnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/ManageOrder/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXE1hbmFnZU9yZGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/ManageProduct/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXE1hbmFnZVByb2R1Y3RcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/ManageUser/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXE1hbmFnZVVzZXJcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/ProductDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXFByb2R1Y3REZXRhaWxzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Register/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXFJlZ2lzdGVyXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Report/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXFJlcG9ydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXFNoYXJlZFxFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXFNoYXJlZFxfTGF5b3V0QWRtaW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/SizeProduct/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXFNpemVQcm9kdWN0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyWork/web-giay/web-giay/presentation_layer/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = cHJlc2VudGF0aW9uX2xheWVyXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-8z9m9w8ko1

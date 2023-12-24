@@ -1,0 +1,194 @@
+﻿@model List<web_giay.business_logic_layer.Models.Product>;
+
+
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = "~/presentation_layer/Views/Shared/_LayoutAdmin.cshtml";
+    List<Product> products = Model;
+    List<Category> categories = ViewData["Category"] as List<Category>;
+    List<Supplier> suppliers = ViewData["Supplier"] as List<Supplier>;
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile" >
+            <!-- Thanh tìm kiếm -->
+            <form class="input-group mb-3" asp-controller="ManageProduct" asp-action="SearchProduct" method="post">
+                <input type="text" class="form-control" placeholder="Tìm kiếm theo tên..." id="searchInputProduct" name="searchProduct">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit" >Tìm kiếm</button>
+                </div>
+            </form>
+            <!-- Form nhập thông tin sản phẩm -->
+            <form class="mb-2" id="formAddProduct" asp-controller="ManageProduct" asp-action="AddProduct" method="post" enctype="multipart/form-data">
+                <div class="form-row align-items-center" >
+                    <div class="col-md-2 ">
+                        <input type="text" class="form-control" id="inputProductName" name="ProductName" placeholder="Tên sản phẩm" required>
+                    </div>
+                    <div class="col-md-2 ">
+                        <select class="form-control" id="inputCategory" name="CategoryId">
+                            <option value="" disabled selected style="display:none;">Select category</option>
+                            @foreach (Category category in categories)
+                            {
+                                <option value="@category.CategoryId">@category.CategoryName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 ">
+                        <select class="form-control" id="inputSupplier" name="SupplierId">
+                            <option value="" disabled selected style="display:none;">Select supplier</option>
+                            @foreach(Supplier supplier in suppliers)
+                            {
+                                <option value="@supplier.SupplierId">@supplier.CompanyName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-1 ">
+                        <input type="number" class="form-control" id="inputPrice" name="ProductPrice" placeholder="Giá" step="any" required>
+                    </div>
+                    <div class="col-md-2 ">
+                        <input type="text" class="form-control" id="inputDescription" name="ProductDescription" placeholder="Mô tả" required>
+                    </div>
+                    <div class="col-md-2 ">
+                        <input type="file" class="form-control" id="inputImage" name="ProductImage" accept="image/*">
+                    </div>
+                    <div class="col-md-1 ">
+                        <button class="btn btn-success" type="submit">Add</button>
+                    </div>
+                </div>
+                <!-- Nút thêm sản phẩm -->
+            </form>
+            <form id="formUpdateProduct" asp-controller="ManageProduct" asp-action="UpdateProduct" method="post" enctype="multipart/form-data">
+                <div class="form-row align-items-center" >
+                    <input type="hidden" id="inputProductIdUpdate" name="ProductIdUpdate" value="">
+                    <input type="hidden" id="inputProductImageUpdate" name="ProductImageUpdate" value="">
+                    <div class="col-md-2 ">
+                        <input type="text" class="form-control" id="inputProductNameUpdate" name="ProductNameUpdate" placeholder="Tên sản phẩm" required>
+                    </div>
+                    <div class="col-md-2 ">
+                        <select class="form-control" id="inputCategoryUpdate" name="CategoryIdUpdate">
+                            <option value="" disabled selected style="display:none;">Select category</option>
+                            @foreach (Category category in categories)
+                            {
+                                <option value="@category.CategoryId">@category.CategoryName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-2 ">
+                        <select class="form-control" id="inputSupplierUpdate" name="SupplierIdUpdate">
+                            <option value="" disabled selected style="display:none;">Select supplier</option>
+                            @foreach (Supplier supplier in suppliers)
+                            {
+                                <option value="@supplier.SupplierId">@supplier.CompanyName</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-1 ">
+                        <input type="number" class="form-control" id="inputPriceUpdate" name="ProductPriceUpdate" placeholder="Giá" step="any" required>
+                    </div>
+                    <div class="col-md-2 ">
+                        <input type="text" class="form-control" id="inputDescriptionUpdate" name="ProductDescriptionUpdate" placeholder="Mô tả" required>
+                    </div>
+                    <div class="col-md-2 ">
+                        <input type="file" class="form-control" id="inputImageUpdate" name="ProductImageUpdate" accept="image/*">
+                    </div>
+                    <div class="col-md-1 ">
+                        <button class="btn btn-info" type="submit">Update</button>
+                    </div>
+                </div>
+                <!-- Nút cập sản phẩm -->
+            </form>
+        </div>
+        <!-- Danh sách thông tin sản phẩm -->
+
+        <div class="mt-4">
+                @foreach (Product product in products)
+                {
+                    <div class="row mb-3 align-items-center item-product" style="height: 200px;margin-bottom :10px; border: 1px solid black;" data-key="@product.ProductId" date-url = "@product.ProductImgURL">
+                        <div class="col-md-2 product-img row align-items-center justify-content-center" style="width: 200px; height: 200px">
+                            <img style="width: 95%; height: 95%" src="@Url.Content(product.ProductImgURL)" alt="Product Image">
+                        </div>
+                        <div class="col-sm-2">@product.ProductName</div>
+                        <div class=" col-sm-1" id="category">@foreach(Category category in categories)
+                            {
+                                if(product.CategoryId == category.CategoryId)
+                                {
+                                    <text>@category.CategoryName</text>
+                                }
+                            }
+                        </div>
+                        <div class=" col-sm-1 " id="supplier">
+                        @foreach (Supplier supplier in suppliers)
+                        {
+                                if(product.SupplierId == supplier.SupplierId)
+                                {
+                                    <text>@supplier.CompanyName</text>
+                                }
+                            }
+                        </div>
+                    <div class="col-sm" id="price">$@product.ProductPrice</div>
+                    <div class="col-sm-4" style="width : 200px; height: 150px;  overflow : hidden ; text-overflow: ellipsis" id="description">@product.ProductDescription</div>
+                        <div class="col-sm-1">
+                            <a class="btn btn-danger" asp-area="" asp-controller="ManageProduct"
+                               asp-action="DeleteProduct" asp-route-productId="@product.ProductId">
+                                <i class="fa-solid fa-trash"></i>
+                            </a>
+                        </div>
+                    </div>
+                }
+        </div>
+
+
+
+
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var itemProducts = document.querySelectorAll('.item-product');
+
+        itemProducts.forEach(function (item) {
+            item.addEventListener('click', function (event) {
+                var productId = item.getAttribute('data-key'); // Lấy ID sản phẩm từ thuộc tính data-key
+                var productImage = item.getAttribute('date-url');
+
+                // Lấy thông tin sản phẩm
+                var productName = item.querySelector('.col-sm-2').innerText.trim();
+                var category = item.querySelector('#category').innerText.trim();
+                var supplier = item.querySelector('#supplier').innerText.trim();
+                var price = item.querySelector('.col-sm').innerText.trim();
+                var description = item.querySelector('#description').innerText.trim();
+
+                // Update các giá trị trong formUpdateProduct
+                document.getElementById('inputProductNameUpdate').value = productName;
+
+                var categoryDropdown = document.getElementById('inputCategoryUpdate');
+                for (var i = 0; i < categoryDropdown.options.length; i++) {
+                    if (categoryDropdown.options[i].text === category) {
+                        categoryDropdown.selectedIndex = i;
+                        break;
+                    }
+                }
+
+                var supplierDropdown = document.getElementById('inputSupplierUpdate');
+                for (var j = 0; j < supplierDropdown.options.length; j++) {
+                    if (supplierDropdown.options[j].text === supplier) {
+                        supplierDropdown.selectedIndex = j;
+                        break;
+                    }
+                }
+
+                document.getElementById('inputPriceUpdate').value = price.replace('$', '');
+                document.getElementById('inputDescriptionUpdate').value = description;
+
+                // Đặt giá trị ID sản phẩm vào một hidden input để gửi với form
+                document.getElementById('inputProductIdUpdate').value = productId;
+                document.getElementById('inputProductImageUpdate').value = productImage;
+
+                // Scroll đến formUpdateProduct để hiển thị
+                document.getElementById('formUpdateProduct').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    });
+</script>
+
+

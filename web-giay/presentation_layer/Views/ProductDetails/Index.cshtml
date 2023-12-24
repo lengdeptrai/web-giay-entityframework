@@ -1,0 +1,112 @@
+﻿@model web_giay.business_logic_layer.Models.Product;
+
+@{
+    ViewData["Title"] = "ProductDetails Page";
+    List<Size> sizes = ViewData["Size"] as List<Size>;
+    List<SizeProduct> sizeProducts = ViewData["SizeProduct"] as List<SizeProduct>;
+}
+
+<div class="container-fluid mt-4">
+    <form id="productDetailsForm" class="row  align-items-center justify-content-center" asp-controller="ManageCart" asp-action="AddItemCartFromProductDetails" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="inputProductIdCart" name="ProductId" value="@Model.ProductId">
+        <div class="col-lg-4 product-details-img mr-5">
+            <img src="@Url.Content(Model.ProductImgURL)" class="img-fluid" alt="@Model.ProductName">
+        </div>
+        <div class="col-lg-6 product-details">
+            <h3 class="mb-4">@Model.ProductName</h3>
+            <!-- Combobox size -->
+            <div class="form-group mb-4 ">
+                <label class="mr-5" for="sizeSelect">Size</label>
+                <select class="form-control-sm" id="sizeSelect" name="SizeCart">
+                    <option value="0" disabled selected style="display:none;">Select Size</option>
+                    @foreach(SizeProduct sizeProduct in sizeProducts)
+                    {
+                        if(Model.ProductId == sizeProduct.ProductId)
+                        {
+                            <option value="@sizeProduct.SizeProductId" max-quantity="@sizeProduct.Quantity">
+                                @foreach(Size size in sizes)
+                                {
+                                    if(sizeProduct.SizeId == size.SizeId)
+                                    {
+                                        <text>@size.SizeName</text>
+                                    }
+                                }
+                            </option>
+                        }
+                    }
+                    <!-- Thêm các size khác nếu cần -->
+                </select>
+            </div>
+            <!-- Input số lượng -->
+            <div class="form-group mb-4 ">
+                <label class="mr-3" for="quantityInput">Quantity</label>
+                <input type="number" class="form-control-sm" id="quantityInputCart" name="QuantityCart" value="1" min="1" max="" >
+                <span id="max-Quantity"></span>
+            </div>
+            <div class="form-group mb-4 ">
+                <span class="mr-5">Price</span>
+                <span class="productPrice">$@Model.ProductPrice</span>
+            </div>
+            <!-- Nút mua và thêm vào giỏ hàng -->
+            <div class="form-group ">
+                <button type="button" class="btn btn-success mr-2 buy-now-btn">
+                    Buy now
+                    <i class="fa-solid fa-dollar-sign text-white mx-2"></i>
+                </button>
+                <button type="submit" class="add-cart-btn btn text-white">
+                    Add to cart
+                    <i class="fa-solid fa-cart-plus text-white mx-1"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Phần mô tả chi tiết -->
+        <div class="col-lg-12 mt-5 description">
+            <h2 class="text-center text-uppercase mb-5 description-text">
+                detailed description
+            </h2>
+            <p>@Model.ProductDescription</p>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Lấy các phần tử cần thiết từ DOM
+    const sizeSelect = document.getElementById('sizeSelect');
+    const quantityInput = document.getElementById('quantityInputCart');
+    const maxQuantitySpan = document.getElementById('max-Quantity');
+
+    // Xử lý khi chọn một option từ dropdown
+    sizeSelect.addEventListener('change', function () {
+        // Lấy giá trị max-quantity của option được chọn và gán vào thuộc tính max của input
+        const selectedOption = sizeSelect.options[sizeSelect.selectedIndex];
+        const maxQuantity = selectedOption.getAttribute('max-quantity');
+        quantityInput.setAttribute('max', maxQuantity);
+
+        // Hiển thị max-quantity trong span sau input
+        maxQuantitySpan.textContent = maxQuantity + ' products';
+    });
+
+    // Xử lý khi nhập vào ô input số lượng
+    quantityInput.addEventListener('input', function () {
+        const enteredQuantity = parseInt(quantityInput.value, 10);
+        const minQuantity = parseInt(quantityInput.getAttribute('min'), 10);
+        const maxQuantity = parseInt(quantityInput.getAttribute('max'), 10);
+
+        // Kiểm tra giá trị nhập vào có nằm trong khoảng min và max không
+        if (enteredQuantity < minQuantity || enteredQuantity > maxQuantity) {
+            // Thông báo và gán giá trị lại thành min nếu nhỏ hơn min hoặc lớn hơn max
+            alert('Quantity must be between ' + minQuantity + ' and ' + maxQuantity);
+            quantityInput.value = minQuantity;
+        }
+    });
+
+    const form = document.getElementById('productDetailsForm');
+    form.addEventListener('submit', function (event) {
+        const selectedSize = document.getElementById('sizeSelect').value;
+        if (selectedSize === '0' || !selectedSize) {
+            event.preventDefault(); // Ngăn chặn việc submit form nếu chưa chọn kích thước
+            alert('Please select a size.');
+        }
+    });
+
+</script>

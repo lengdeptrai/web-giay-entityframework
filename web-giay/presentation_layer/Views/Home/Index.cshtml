@@ -1,0 +1,33 @@
+﻿@model List< web_giay.business_logic_layer.Models.Product>;
+
+@{
+    ViewData["Title"] = "Home Page";
+    List<Product> products = Model;
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sản phẩm 1 -->
+        @foreach (Product product in products)
+        {
+            <div class="col-6 col-md-4 col-lg-2 product-item " data-key="@product.ProductId">
+                <div class="product-card">
+                    <a asp-area="" asp-controller="ProductDetails" asp-action="Index"
+                       asp-route-itemid="@product.ProductId" asp-route-admin="@ViewBag.AccessAdmin" asp-route-fullName="@ViewBag.Name" class="nav-link text-dark">
+                        <div class="cover-img">
+                            <img src="@Url.Content(product.ProductImgURL)" alt="Product Image">
+                        </div>
+                        <h6>@product.ProductName</h6>
+                        <p class="col text-danger">Price: $@product.ProductPrice</p>
+                    </a>
+                    <div class="add-cart">
+                        <a class="nav-link text-white" asp-area="" asp-controller="ManageCart" asp-action="AddToCart"
+                           asp-route-productId="@product.ProductId">
+                            <i class="fa-solid fa-cart-plus"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

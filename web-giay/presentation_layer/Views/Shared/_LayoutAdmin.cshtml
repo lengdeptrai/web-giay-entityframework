@@ -1,0 +1,187 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="~/css/admin.css">
+    <link rel="stylesheet" type="text/css" href="~/css/cart.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- Font-icon css-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body onload="time()" class="app sidebar-mini rtl">
+    <!-- Navbar-->
+    <header class="app-header">
+        <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+        <ul class="app-nav">
+            <li>
+                <a class="app-nav__item" asp-area="" asp-controller="Logout" asp-action="Index">
+                    <i class='bx bx-log-out bx-rotate-180'></i> 
+                </a>
+
+            </li>
+        </ul>
+    </header>
+    <!-- Sidebar menu-->
+    <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+    <aside class="app-sidebar">
+        <div class="app-sidebar__user">
+            <p class="app-sidebar__user-name text-danger mb-2"><b>ADMIN PAGE</b></p>
+            <p class="app-sidebar__user-designation">Welcome back 
+                @if (!string.IsNullOrEmpty(ViewBag.Name)) { <text>@ViewBag.Name</text> }</p>
+        </div>
+        <hr>
+        <ul class="app-menu">
+
+            <!-- Báo cáo -->
+            <li>
+                <a class="app-menu__item @if(!string.IsNullOrEmpty(ViewBag.IsReport)) { <text>active</text> }"
+                   asp-area="" asp-controller="Report" asp-action="Index" >
+                    <i class='app-menu__icon bx bx-bar-chart'></i>
+                    <span class="app-menu__label">Report</span>
+                </a>
+            </li>
+
+            <!-- Quản lý tài khoản -->
+            <li>
+                <a class="app-menu__item @if(!string.IsNullOrEmpty(ViewBag.IsManageUser)) { <text>active</text> }"
+                   asp-area="" asp-controller="ManageUser" asp-action="Index" asp-route-fullName="@ViewBag.Name">
+                    <i class='app-menu__icon bx bx-user'></i>
+                    <span class="app-menu__label">Manage User</span>
+                </a>
+            </li>
+
+            <!-- Quản lý sản phẩm -->
+            <li>
+                <a class="app-menu__item @if(!string.IsNullOrEmpty(ViewBag.IsManageProduct)) { <text>active</text> }"
+                   asp-area="" asp-controller="ManageProduct" asp-action="Index" asp-route-fullName="@ViewBag.Name">
+                    <i class='app-menu__icon bx bx-box'></i>
+                    <span class="app-menu__label">Manage Product</span>
+                </a>
+            </li>
+
+            <li>
+                <a class="app-menu__item @if(!string.IsNullOrEmpty(ViewBag.IsManageSizeProduct)) { <text>active</text> }"
+                   asp-area="" asp-controller="ManageSizeProduct" asp-action="Index" asp-route-fullName="@ViewBag.Name">
+                    <i class='app-menu__icon bx bx-box'></i>
+                    <span class="app-menu__label">Size Product</span>
+                </a>
+            </li>
+
+            <!-- Quản lý đơn hàng -->
+            <li>
+                <a class="app-menu__item @if(!string.IsNullOrEmpty(ViewBag.IsManageOrder)) { <text>active</text> }"
+                   asp-area="" asp-controller="ManageOrder" asp-action="Index" asp-route-fullName="@ViewBag.Name">
+                    <i class='app-menu__icon bx bx-shopping-bag'></i>
+                    <span class="app-menu__label">Manage Order</span>
+                </a>
+            </li>
+
+
+           
+
+        </ul>
+
+    </aside>
+    <main class="app-content">
+        <div class="row nav-admin">
+            <div class="col-md-12">
+                <div class="app-title">
+                    <ul class="app-breadcrumb breadcrumb">
+                        <li class="breadcrumb-item" style="font-size : 18px">
+                            @if(!string.IsNullOrEmpty(ViewBag.IsRePort)) 
+                            { 
+                                <text>REPORT</text>
+                            }
+                            else if (!string.IsNullOrEmpty(ViewBag.IsManageUser))
+                            {
+                                <text>MANAGE USER</text>
+                            }
+                            else if (!string.IsNullOrEmpty(ViewBag.IsManageProduct))
+                            {
+                                <text>MANAGE PRODUCT</text>
+                            }
+                            else if (!string.IsNullOrEmpty(ViewBag.IsManageSizeProduct))
+                            {
+                                <text>SIZE PRODUCT</text>
+                            }
+                            else
+                            {
+                                <text>MANAGE ORDER</text>
+                            }
+                        </li>
+                    </ul>
+                    <div id="clock" style="font-size : 16px;"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Nội dung trang chủ -->
+        <div class="content-admin">
+            @RenderBody()
+        </div>
+
+    </main>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/popper.min.js"></script>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/main.js"></script>
+    <!--===============================================================================================-->
+    <script src="js/plugins/pace.min.js"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="js/plugins/chart.js"></script>
+    <!--===============================================================================================-->
+
+    <script type="text/javascript">
+        //Thời Gian
+        function time() {
+            var today = new Date();
+            var weekday = new Array(7);
+            weekday[0] = "Chủ Nhật";
+            weekday[1] = "Thứ Hai";
+            weekday[2] = "Thứ Ba";
+            weekday[3] = "Thứ Tư";
+            weekday[4] = "Thứ Năm";
+            weekday[5] = "Thứ Sáu";
+            weekday[6] = "Thứ Bảy";
+            var day = weekday[today.getDay()];
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1;
+            var yyyy = today.getFullYear();
+            var h = today.getHours();
+            var m = today.getMinutes();
+            var s = today.getSeconds();
+            m = checkTime(m);
+            s = checkTime(s);
+            nowTime = h + " giờ " + m + " phút " + s + " giây";
+            if (dd < 10) {
+                dd = '0' + dd
+            }
+            if (mm < 10) {
+                mm = '0' + mm
+            }
+            today = day + ', ' + dd + '/' + mm + '/' + yyyy;
+            tmp = '<span class="date"> ' + today + ' - ' + nowTime +
+                '</span>';
+            document.getElementById("clock").innerHTML = tmp;
+            clocktime = setTimeout("time()", "1000", "Javascript");
+
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            }
+        }
+    </script>
+    <script src="https://kit.fontawesome.com/835da8cc08.js" crossorigin="anonymous"></script>
+</body>
+</html>

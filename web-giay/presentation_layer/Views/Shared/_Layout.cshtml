@@ -1,0 +1,128 @@
+﻿@{
+    List<Category> categories = ViewData["Category"] as List<Category>;
+    string txtSearch = ViewData["txtSearch"] as string;
+    int countCart = (int)ViewBag.CountCart;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - web_giay</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/layout.css" />
+    <link rel="stylesheet" href="~/css/productdetails.css" />
+    <link rel="stylesheet" href="~/css/manageaccount.css" />
+    <link rel="stylesheet" href="~/css/home.css" />
+    <link rel="stylesheet" href="~/css/cart.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/web_giay.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-dark text-light text-center py-4">
+        <h1 class="text-uppercase">shoe store</h1>
+    </header>
+    <nav class="bg-light py-2">
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index" asp-route-admin ="@ViewBag.AccessAdmin">
+                        <i class="fa-solid fa-house text-black"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="nav-item nav-link">
+                    <div class="bars">
+                        <span class="navbars">
+                            <i class="fa-solid fa-bars text-black"></i>
+                            Category
+                        </span>
+                        <ul class="navbar">
+                            @foreach(Category category in categories)
+                            {
+                                <li class="navbar-item">
+                                    <a class="nav-link text-black" asp-area="" asp-controller="Home"
+                                       asp-action="Category" asp-route-categoryId="@category.CategoryId" asp-route-fullName="@ViewBag.Name" asp-route-admin="@ViewBag.AccessAdmin">
+                                        @category.CategoryName
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                </li>
+                <li class="nav-item nav-link">
+                    <form asp-controller="Home" asp-action="Search" asp-route-admin="@ViewBag.AccessAdmin" asp-route-fullName="@ViewBag.Name" method="post" class="search">
+                        <input class="px-2" id="txtSearch" name="txtSearch" value="@txtSearch" type="text" placeholder="Search product" />
+                        <button class="btn btn-primary" type="submit">
+                            <i class="fa-solid fa-magnifying-glass text-black text-center"></i>
+                        </button>
+                    </form>
+
+                </li>
+            </ul>
+
+            <ul class="nav">
+                <li class="nav-item nav-link">
+                    <div class="cart">
+                        <a class="nav-link" asp-area="" asp-controller="ManageCart" asp-action="Index" 
+                        asp-route-fullName="@ViewBag.Name" asp-route-admin="@ViewBag.AccessAdmin"
+                           asp-route-countCart="@countCart">
+                            <i class="fa-solid fa-cart-shopping text-black text-center"></i>
+                            <span class="quantity text-center">@if(countCart != null)
+                                {
+                                    <text>@countCart</text>
+                                }
+                                else
+                                {
+                                    <text>0</text>
+                                }
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    @if (!string.IsNullOrEmpty(ViewBag.Name) &&ViewBag.AccessAdmin == null)
+                    {
+                        <div class="usershop login">
+                            <a class="nav-link user" asp-controller="ManageAccount" asp-action="Index" asp-route-fullName="@ViewBag.Name">
+                                <i class="fa-solid fa-user text-black mr-2"></i>
+                                @ViewBag.Name
+                            </a>
+                        </div>
+                    }
+                    @if (!string.IsNullOrEmpty(ViewBag.AccessAdmin))
+                    {
+                        <div class="usershop login">
+                            <a class="nav-link user text-danger" style="font-size : 18px;" asp-controller="Report" asp-action="Index">
+                                <i class="fa-solid fa-arrow-right-from-bracket text-danger mr-1"></i>
+                                Admin page
+                            </a>
+                        </div>
+                    }
+                    <div class="register-btn bg-primary">
+                        <a class="nav-link text-uppercase text-center" asp-area="" asp-controller="Register" asp-action="Index">register</a>
+                    </div>
+                    <div class="login-btn bg-success">
+                        <a class="nav-link text-uppercase text-center" asp-area="" asp-controller="Login" asp-action="Index">login</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main>@RenderBody()</main>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2023 - web_ban_giay_dep - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://kit.fontawesome.com/835da8cc08.js" crossorigin="anonymous"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,417 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\web-giay.bundle.scp.css",
+      "PackagePath": "staticwebassets\\web-giay.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\css\\cart.css",
+      "PackagePath": "staticwebassets\\css\\cart.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\css\\home.css",
+      "PackagePath": "staticwebassets\\css\\home.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\css\\layout.css",
+      "PackagePath": "staticwebassets\\css\\layout.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\css\\manageaccount.css",
+      "PackagePath": "staticwebassets\\css\\manageaccount.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\css\\productdetails.css",
+      "PackagePath": "staticwebassets\\css\\productdetails.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\13ca39b5-a1b9-4944-9bab-5cc42afdc6e4_download (4).jpg",
+      "PackagePath": "staticwebassets\\imgs\\13ca39b5-a1b9-4944-9bab-5cc42afdc6e4_download (4).jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\2829c5c0-cdc5-4879-927f-e8f74b75575f_Giày-Nike-nam-trắng-F65.jpg",
+      "PackagePath": "staticwebassets\\imgs\\2829c5c0-cdc5-4879-927f-e8f74b75575f_Giày-Nike-nam-trắng-F65.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\2cccbb5a-0cd6-49c7-b55d-593373fb09c5_download (3).jpg",
+      "PackagePath": "staticwebassets\\imgs\\2cccbb5a-0cd6-49c7-b55d-593373fb09c5_download (3).jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\2ef000e4-8205-44ce-9826-e973cf02af55_images (1).jfif",
+      "PackagePath": "staticwebassets\\imgs\\2ef000e4-8205-44ce-9826-e973cf02af55_images (1).jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\31cdf059-e9ac-4322-b2f0-e6b197fa4718_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\31cdf059-e9ac-4322-b2f0-e6b197fa4718_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\42e163da-87ef-4ff0-a76c-6a9009767e23_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\42e163da-87ef-4ff0-a76c-6a9009767e23_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\44075da5-1a03-400f-a81d-2ee1b938e79f_download (2).jpg",
+      "PackagePath": "staticwebassets\\imgs\\44075da5-1a03-400f-a81d-2ee1b938e79f_download (2).jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\4bc2670f-97be-46f8-8d5d-2012c47cb64f_download.jpg",
+      "PackagePath": "staticwebassets\\imgs\\4bc2670f-97be-46f8-8d5d-2012c47cb64f_download.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\4c9eb41c-e8bf-46ba-b648-6c24b74ca1e8_Giày-Nike-nam-trắng-F65.jpg",
+      "PackagePath": "staticwebassets\\imgs\\4c9eb41c-e8bf-46ba-b648-6c24b74ca1e8_Giày-Nike-nam-trắng-F65.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\4f97b873-f24a-4da6-a299-76d2fb6bcdbf_download (3).jpg",
+      "PackagePath": "staticwebassets\\imgs\\4f97b873-f24a-4da6-a299-76d2fb6bcdbf_download (3).jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\58c89212-15c6-43d9-8aba-808ab29c5b40_images.jpg",
+      "PackagePath": "staticwebassets\\imgs\\58c89212-15c6-43d9-8aba-808ab29c5b40_images.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\5a22009d-ccee-4cb7-8ead-6179e6ad6089_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\5a22009d-ccee-4cb7-8ead-6179e6ad6089_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\72da3f56-de10-4cc8-a926-4633197b71ac_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\72da3f56-de10-4cc8-a926-4633197b71ac_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\74a40268-dfca-4fdd-a506-77b1e1369da0_ggiig.jpg",
+      "PackagePath": "staticwebassets\\imgs\\74a40268-dfca-4fdd-a506-77b1e1369da0_ggiig.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\7769fd61-6ae6-4f3b-b5fc-7f2ab9ecd8e5_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\7769fd61-6ae6-4f3b-b5fc-7f2ab9ecd8e5_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\77f06f28-0d7e-4e3a-8c33-ccdbc1cf8a88_images (1).jfif",
+      "PackagePath": "staticwebassets\\imgs\\77f06f28-0d7e-4e3a-8c33-ccdbc1cf8a88_images (1).jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\80105989-c360-4a97-9766-22d3b8932e73_S.png",
+      "PackagePath": "staticwebassets\\imgs\\80105989-c360-4a97-9766-22d3b8932e73_S.png"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\a80a50bc-b720-4d2c-859f-b5e22c6708f9_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\a80a50bc-b720-4d2c-859f-b5e22c6708f9_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\b3a56a1f-89e6-408c-893c-e1303da0eaf0_download (3).jpg",
+      "PackagePath": "staticwebassets\\imgs\\b3a56a1f-89e6-408c-893c-e1303da0eaf0_download (3).jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\b71d8e52-df89-4563-bc53-46b46dfa7eef_images (1).jfif",
+      "PackagePath": "staticwebassets\\imgs\\b71d8e52-df89-4563-bc53-46b46dfa7eef_images (1).jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\c1e835cb-dbf7-4697-a511-ddc5fd2476e2_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\c1e835cb-dbf7-4697-a511-ddc5fd2476e2_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\cda8d640-9163-4fda-b886-a4889e786a95_download (1).jpg",
+      "PackagePath": "staticwebassets\\imgs\\cda8d640-9163-4fda-b886-a4889e786a95_download (1).jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\d51180b6-00c0-4084-a529-277462a91277_gnam.jpg",
+      "PackagePath": "staticwebassets\\imgs\\d51180b6-00c0-4084-a529-277462a91277_gnam.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\da12c2d7-f7d4-4086-88ce-88677fd41033_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\da12c2d7-f7d4-4086-88ce-88677fd41033_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\dbdda67d-a674-4806-98d2-4e791c32f2e7_images (2).jpg",
+      "PackagePath": "staticwebassets\\imgs\\dbdda67d-a674-4806-98d2-4e791c32f2e7_images (2).jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\e180a9fe-fd83-4f53-a7e2-41c4527db0e4_download.jpg",
+      "PackagePath": "staticwebassets\\imgs\\e180a9fe-fd83-4f53-a7e2-41c4527db0e4_download.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\e742173f8ad6a0c02cf084298caecbe3.jpg",
+      "PackagePath": "staticwebassets\\imgs\\e742173f8ad6a0c02cf084298caecbe3.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\e9009eba-c10d-4b10-a753-1e8d745c77a3_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\e9009eba-c10d-4b10-a753-1e8d745c77a3_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\ea7f6cdf-d10a-47c8-96dc-8a63f991590e_Giày-Nike-nam-trắng-F65.jpg",
+      "PackagePath": "staticwebassets\\imgs\\ea7f6cdf-d10a-47c8-96dc-8a63f991590e_Giày-Nike-nam-trắng-F65.jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\f5920b1f-0541-402c-8310-6c3c32129396_images.jfif",
+      "PackagePath": "staticwebassets\\imgs\\f5920b1f-0541-402c-8310-6c3c32129396_images.jfif"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\feb7dcb4-8727-4a53-8113-c9263a76a816_images (3).jpg",
+      "PackagePath": "staticwebassets\\imgs\\feb7dcb4-8727-4a53-8113-c9263a76a816_images (3).jpg"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\imgs\\noimg.png",
+      "PackagePath": "staticwebassets\\imgs\\noimg.png"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\MyWork\\web-giay\\web-giay\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.web-giay.props",
+      "PackagePath": "build\\web-giay.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.web-giay.props",
+      "PackagePath": "buildMultiTargeting\\web-giay.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.web-giay.props",
+      "PackagePath": "buildTransitive\\web-giay.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.web-giay.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

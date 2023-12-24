@@ -1,0 +1,192 @@
+﻿@{
+    ViewData["Title"] = "Cart Page";
+    List<Product> products =  ViewData["Products"] as List<Product>;
+    List<ItemCart> itemCarts = ViewData["Carts"] as List<ItemCart>;
+    List<SizeProduct> sizeProducts = ViewData["SizeProduct"] as List<SizeProduct>;
+    List<Size> sizes = ViewData["Size"] as List<Size>;
+}
+
+
+
+
+<div class="container-fluid">
+    <div class="card-header">
+        <h2 class="text-center">Shopping Cart</h2>
+    </div>
+    <div class="container-fluid list-cart ">
+        @for(int i = 0; i< itemCarts.Count(); i++)
+        {
+            <div class="row mb-3 align-items-center item-cart">
+                <div class="col-sm check-cart">
+                    <input type="checkbox" name="item-select">
+                </div>
+                <div class="col-md-2 cart-img">
+                    <img src="@Url.Content(products[i].ProductImgURL)" alt="Product Image">
+                </div>
+                <div class="col-sm-2">@products[i].ProductName</div>
+                <div class=" col-sm-1">
+                    <select class="form-control-sm" asp-for="@itemCarts[i].SizeId">
+                        @for(int j = 0; j<sizeProducts.Count; j++)
+                        {
+                            if(itemCarts[i].ProductId == sizeProducts[j].ProductId)
+                            {
+                                <option value="@sizeProducts[j].SizeProductId">
+                                    @foreach(Size size in sizes)
+                                    {
+                                        if(sizeProducts[j].SizeId == size.SizeId)
+                                        {
+                                            <text>@size.SizeName</text>
+                                        }
+                                    }
+                                </option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <input type="number" class="form-control text-center " value="@itemCarts[i].Quantity"
+                           min="1" max="102" data-productid="@itemCarts[i].ProductId" data-productprice="@products[i].ProductPrice">
+                </div>
+                <div class="col-sm">$@products[i].ProductPrice</div>
+                <div class="col-sm-2">
+                    <span>124 products</span>
+                </div>
+                <div class="col-sm">
+                    <a class="btn btn-danger" asp-area="" asp-controller="ManageCart"
+                       asp-action="DeleteItemCart" asp-route-productId="@itemCarts[i].ProductId" asp-route-sizeId="@itemCarts[i].SizeId">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+                </div>
+            </div>
+        }
+
+    </div>
+    <div class="container-fluid pay ">
+        <div class="check-all-cart">
+            <input type="checkbox" id="check-all">
+            <label for="check-all">Select All</label>
+        </div>
+        <div class="total">
+            <h2>Total : $0.00</h2>
+        </div>
+        <button type="submit" class="btn btn-success pay-btn">
+            <span>Buy</span>
+            <i class="fa-solid fa-sack-dollar"></i>
+        </button>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const numberInputs = document.querySelectorAll('input[type="number"]');
+        const checkboxes = document.querySelectorAll('input[name="item-select"]');
+        const checkAll = document.getElementById('check-all');
+
+        // Lặp qua mỗi ô input number
+        numberInputs.forEach(function (input) {
+            input.addEventListener("change", function () {
+                if (input.value == "") input.value = 1;
+                const minValue = parseInt(input.getAttribute('min'));
+                const maxValue = parseInt(input.getAttribute('max'));
+                const enteredValue = parseInt(input.value);
+                // Kiểm tra giá trị nhập vào
+                if (enteredValue < minValue || enteredValue > maxValue) {
+                    alert(`Product quantity is not enough`);
+                    input.value = minValue;
+                } else {
+                    const productId = parseInt(input.getAttribute('data-productid'));
+                    updateCartItem(productId, enteredValue);
+                    updateTotalPrice();
+                }
+            });
+        });
+
+        // Lặp qua mỗi checkbox
+        checkboxes.forEach(function (checkbox) {
+            checkbox.addEventListener('change', function () {
+                updateTotalPrice();
+            });
+        });
+
+        checkAll.addEventListener('change', function () {
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = checkAll.checked;
+            });
+            updateTotalPrice();
+        });
+
+        function updateCartItem(productId, quantity) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/ManageCart/UpdateItemCart', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            const data = JSON.stringify({ ProductId: productId, Quantity: quantity });
+            xhr.send(data);
+
+        }
+
+        function updateTotalPrice() {
+            let totalPrice = 0;
+            for (let i = 0; i < numberInputs.length; i++) {
+                if (checkboxes[i].checked) {
+                    const quantity = parseInt(numberInputs[i].value);
+                    const price = parseFloat(numberInputs[i].getAttribute('data-productprice'));
+                    totalPrice += quantity * price;
+                }
+            }
+            const totalElement = document.querySelector('.total h2');
+            totalElement.textContent = `Total : $${totalPrice.toFixed(2)}`;
+        }
+
+
+        const buyButton = document.querySelector('.pay-btn');
+
+        buyButton.addEventListener('click', function (event) {
+            
+
+            const selectedProducts = [];
+            const checkboxes = document.querySelectorAll('input[name="item-select"]');
+
+            checkboxes.forEach(function (checkbox, index) {
+                if (checkbox.checked) {
+                    const productId = parseInt(checkbox.closest('.item-cart').querySelector('input[type="number"]').getAttribute('data-productid'));
+                    const quantity = parseInt(checkbox.closest('.item-cart').querySelector('input[type="number"]').value);
+                    const sizeId = parseInt(checkbox.closest('.item-cart').querySelector('select').value);
+                    selectedProducts.push({ ProductId: productId, Quantity: quantity, SizeId: sizeId });
+                }
+            });
+
+            // Gửi danh sách sản phẩm được chọn về server
+            if (selectedProducts.length > 0) {
+                sendSelectedProducts(selectedProducts);
+            } else {
+                alert('Please select at least one product to buy.');
+            }
+        });
+
+        function sendSelectedProducts(products) {
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', '/BuyProduct/BuyProductFromCart', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.status === true) {
+                            alert('Buy products successfully!');
+                            window.location.href = '/Home/Index';
+
+                        } else {
+                            window.location.href = '/Login/Index';
+                        }
+                    } else {
+                        // Xử lí khi gửi không thành công
+                        console.error('Error sending selected products.');
+                    }
+                }
+            };
+            const data = JSON.stringify(products);
+            console.log(data);
+            xhr.send(data);
+        }
+    });
+
+</script>

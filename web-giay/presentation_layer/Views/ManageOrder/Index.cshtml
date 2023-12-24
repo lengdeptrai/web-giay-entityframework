@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+    Layout = "~/presentation_layer/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <!-- Thanh tìm kiếm -->
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Tìm kiếm theo tên sản phẩm...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">Tìm kiếm</button>
+                </div>
+            </div>
+
+            <!-- Form nhập thông tin -->
+            <form>
+                <div class="form-row">
+                    <div class="col-md-3 mb-3">
+                        <label for="inputProductName">Tên sản phẩm</label>
+                        <input type="text" class="form-control" id="inputProductName" placeholder="Tên sản phẩm" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="inputPrice">Giá</label>
+                        <input type="text" class="form-control" id="inputPrice" placeholder="Giá" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="inputQuantity">Số lượng</label>
+                        <input type="text" class="form-control" id="inputQuantity" placeholder="Số lượng" required>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <label for="inputStatus">Trạng thái</label>
+                        <select class="form-control" id="inputStatus" required>
+                            <option value="1">Hoàn thành</option>
+                            <option value="2">Chưa hoàn thành</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Nút thêm -->
+                <button class="btn btn-success" type="button" onclick="addOrder(event)">Thêm</button>
+
+            </form>
+
+            <!-- Danh sách thông tin -->
+            <div class="mt-4">
+                <table class="table table-bordered" id="orderTable">
+                    <thead>
+                        <tr>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Số lượng</th>
+                            <th>Trạng thái</th>
+                            <th>Tính năng</th>
+                        </tr>
+                    </thead>
+                    <tbody id="orderList"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+﻿@model List<UserStore>;
+
+@{
+    ViewData["Title"] = "Login Page";
+    Layout = "~/presentation_layer/Views/Shared/_LayoutAdmin.cshtml";
+
+    List<UserStore> users = Model;
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="tile">
+            <!-- Thanh tìm kiếm -->
+            <form class="input-group mb-3" asp-controller="ManageUser" asp-action="SearchUser" method="post">
+                <input type="text" class="form-control" placeholder="Tìm kiếm theo tên..." id="searchInput" name="inputNameUser">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit" >Tìm kiếm</button>
+                </div>
+            </form>
+
+            <!-- Form nhập thông tin -->
+
+            <form class="mb-2" id="addUserForm" asp-controller="ManageUser" asp-action="AddUser" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="inputName" name="name" placeholder="Name" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Address" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" id="inputPhone" name="phone" placeholder="Phone" required>
+                    </div>
+                    <div class="col-md-1">
+                        <select class="form-control" id="inputAccess" name="access">
+                            <option value="" disabled selected style="display:none;">Access</option>
+                            <option value="0">False</option>
+                            <option value="1">True</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-success" type="submit">Add</button>
+                    </div>
+                </div>
+            </form>
+
+            <form id="updateUserForm" asp-controller="ManageUser" asp-action="UpdateUser" method="post" enctype="multipart/form-data">
+                <div class="form-row">
+                    <input type="hidden" id="inputUserIdUpdate" name="userIdUpdate" value="">
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="inputNameUpdate" name="nameUpdate" placeholder="Name" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="email" class="form-control" id="inputEmailUpdate" name="emailUpdate" placeholder="Email" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="password" class="form-control" id="inputPasswordUpdate" name="passwordUpdate" placeholder="Password">
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" id="inputAddressUpdate" name="addressUpdate" placeholder="Address" required>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="number" class="form-control" id="inputPhoneUpdate" name="phoneUpdate" placeholder="Phone" required>
+                    </div>
+                    <div class="col-md-1">
+                        <select class="form-control" id="inputAccessUpdate" name="accessUpdate">
+                            <option value="" disabled selected style="display:none;">Access</option>
+                            <option value="0">False</option>
+                            <option value="1">True</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn btn-info" type="submit">Update</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Danh sách thông tin -->
+        </div>
+        <div class="mt-4">
+            @foreach (UserStore user in users)
+            {
+                <div class="row mb-3 align-items-center item-user" style="height: 150px;margin-bottom :10px; border: 1px solid black" data-key="@user.UserId">
+                    <div class="col-sm-2">Name: @user.Name</div>
+                    <div class="col-sm-2">Email: @user.Email</div>
+                    <div class="col-sm-3">Address: @user.Address</div>
+                    <div class="col-sm-2">Phone: @user.Phone</div>
+                    <div class=" col-sm-1" id="access">Access: @user.Access</div>
+                    <div class="col-sm-1">
+                        <a class="btn btn-danger" asp-area="" asp-controller="ManageUser"
+                           asp-action="DeleteUser" asp-route-userId="@user.UserId">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const updateUserForm = document.getElementById('updateUserForm');
+
+        // Lặp qua từng item-user để thêm sự kiện click
+        const userItems = document.querySelectorAll('.item-user');
+        userItems.forEach(function (userItem) {
+            userItem.addEventListener('click', function () {
+                const userId = this.getAttribute('data-key');
+                const name = this.querySelector('.col-sm-2:nth-child(1)').innerText.split(': ')[1];
+                const email = this.querySelector('.col-sm-2:nth-child(2)').innerText.split(': ')[1];
+                const password = ""; // Bạn có thể đặt giá trị mặc định nếu cần
+                const address = this.querySelector('.col-sm-3').innerText.split(': ')[1];
+                const phone = this.querySelector('.col-sm-2:nth-child(4)').innerText.split(': ')[1];
+                const access = this.querySelector('#access').innerText.split(': ')[1];
+
+                // Đổ dữ liệu vào form updateUserForm tương ứng
+                document.getElementById('inputUserIdUpdate').value = userId;
+                document.getElementById('inputNameUpdate').value = name;
+                document.getElementById('inputEmailUpdate').value = email;
+                document.getElementById('inputPasswordUpdate').value = password;
+                document.getElementById('inputAddressUpdate').value = address;
+                document.getElementById('inputPhoneUpdate').value = phone;
+
+
+                var accessDropdown = document.getElementById('inputAccessUpdate');
+                for (var i = 0; i < accessDropdown.options.length; i++) {
+                    if (accessDropdown.options[i].text === access) {
+                        accessDropdown.selectedIndex = i;
+                        break;
+                    }
+                }
+
+                updateUserForm.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    });
+</script>

@@ -1,0 +1,10 @@
+﻿@using System.Text.Json
+@{
+    Layout = "~/presentation_layer/Views/Shared/_Layout.cshtml";
+    DatabaseContext databaseContext = new DatabaseContext();
+    ViewData["Category"] = databaseContext.Categories.ToList();
+    ViewData["Supplier"] = databaseContext.Suppliers.ToList();
+    ViewData["Size"] = databaseContext.Sizes.ToList();
+    ViewData["Product"] = databaseContext.Products.ToList();
+    ViewData["SizeProduct"] = databaseContext.SizeProducts.ToList();
+}
